@@ -1,0 +1,7 @@
+version: 1.13.9
+modules:
+  - http_ssl
+  - stream_ssl
+  - mail_ssl
+  - http_geoip
+  - http_auth_request
