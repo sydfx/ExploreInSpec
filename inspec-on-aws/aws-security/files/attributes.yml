@@ -1,0 +1,17 @@
+ec2_instance.database : i-091ca44c7bf099391
+ec2_instance.database.ami : ami-97785bed
+ec2_instance.database.instance_type : t1.micro
+ec2_instance.database.name : database
+ec2_instance.database.private_ip : 10.0.100.207
+ec2_instance.webserver : i-063970075454277b5
+ec2_instance.webserver.ami : ami-97785bed
+ec2_instance.webserver.instance_type : t1.micro
+ec2_instance.webserver.name : webserver
+ec2_instance.webserver.public_ip : 34.201.19.149
+route.internet_access.id : rtb-07be717b
+security_group.mysql.id : sg-1982736f
+security_group.ssh.id : sg-27887951
+security_group.web.id : sg-fc9c6d8a
+subnet.private.id : subnet-ca2026ae
+subnet.public.id : subnet-492c2a2d
+vpc.id : vpc-f44a918f
