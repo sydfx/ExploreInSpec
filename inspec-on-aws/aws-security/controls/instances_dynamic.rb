@@ -1,7 +1,8 @@
 # encoding: utf-8
 # copyright: 2018, sydfx
+# Dynamic file
 
-# List of IDs for the webserver instance.
+# List of objects variables for a webserver instance.
 webserver_id = attribute('ec2_instance.webserver', description: 'EC2 Webserver ID')
 ec2_ami_id = attribute('ec2_instance.webserver.ami', description: 'AMI ID')
 ec2_type = attribute('ec2_instance.webserver.instance_type', description: 'EC2 Type')
@@ -11,7 +12,7 @@ private_subnet = attribute('subnet.private.id', description: 'Private subnet')
 web_security_group = attribute('security_group.web.id', description: 'Security group used for web')
 ssh_security_group = attribute('security_group.ssh.id', description: 'Security group used for ssh')
 mysql_security_group = attribute('security_group.mysql.id', description: 'Security group used for mysql')
-# List of IDs for the database instance.
+# List of objects variables for a database instance.
 database_id = attribute('ec2_instance.database', description: 'Database Instance ID')
 ec2_db_type = attribute('ec2_instance.database.instance_type', description: 'Database Instance Type')
 ec2_db_ami_id = attribute('ec2_instance.database.ami', description: 'Database AMI ID')
