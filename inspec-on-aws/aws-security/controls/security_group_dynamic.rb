@@ -3,9 +3,9 @@
 # Dynamic file
 
 # You can write test objects variables here
-web_security_group = attribute('security_group.web.id', description: 'Security group used for web')
-ssh_security_group = attribute('security_group.ssh.id', description: 'Security group used for ssh')
-mysql_security_group = attribute('security_group.mysql.id', description: 'Security group used for mysql')
+web_security_group = attribute('security_group.web.id', description: 'Security group ID used for web')
+ssh_security_group = attribute('security_group.ssh.id', description: 'Security group ID used for ssh')
+mysql_security_group = attribute('security_group.mysql.id', description: 'Security group ID used for mysql')
 
 # Ingress rules for security group will be writen here when developed;
 
