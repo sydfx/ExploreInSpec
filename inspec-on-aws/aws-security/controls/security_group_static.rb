@@ -1,5 +1,6 @@
 # encoding: utf-8
 # copyright: 2018, sydfx
+# Static file
 
 # you add controls here
 control 'AWS Security Group' do
