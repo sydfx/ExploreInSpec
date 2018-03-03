@@ -4,5 +4,7 @@ maintainer: sydfx
 copyright: sydfx
 copyright_email: admin@mtlinfographie.com
 license: Apache-2.0
-summary: An InSpec NGINX Compliance Profile
+summary: An InSpec AWS Compliance Profile
 version: 0.1.0
+supports:
+  - platform: aws
