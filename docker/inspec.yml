@@ -1,0 +1,8 @@
+name: docker
+title: InSpec Profile
+maintainer: David G
+copyright: David G
+copyright_email: info@mtlinfographie.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile for some docker containers
+version: 0.2.0

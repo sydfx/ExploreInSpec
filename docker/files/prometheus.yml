@@ -1,0 +1,8 @@
+docker.name : prometheus
+docker.repo : prom/prometheus
+docker.ports : 0.0.0.0:9090->9090/tcp
+docker.command : "/bin/prometheus --config.file=/etc/prometheus/prometheus.yml --storage.tsdb.path=/prometheus --web.c...ries=/usr/share/prometheus/console_libraries --web.console.templates=/usr/share/prometheus/consoles"
+docker.container : c0750648548c
+docker.image : prometheus:latest
+docker.sha256 : sha256:ee044079a07233d7b9e5887f177033284d81775cf2868a13603bbbdc8563655b
+docker.tag : latest
