@@ -1,3 +1,3 @@
-# Example InSpec Profile
+# Docker test InSpec
 
-This example shows the implementation of an InSpec profile.
+This is a learning and still in development and never should be used in production as is.
