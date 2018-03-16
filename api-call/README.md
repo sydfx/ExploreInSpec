@@ -2,4 +2,4 @@
 
 This is a learning and still in development and never should be used in production as is.
 
-This series of test will be to develop a series of test against some services via API calls.
+This suite will be developed to do some test against services via API calls.
