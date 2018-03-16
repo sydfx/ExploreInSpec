@@ -27,7 +27,7 @@ control 'mtlinfo-01' do
 end
 control 'mtlinfo-02' do
   impact 1.0
-  title 'Website parameters validation'
+  title 'Website content validation'
   desc 'Insert some description here'
   ref 'Some reference', url: 'http://link.to.some.documentation.com'
   describe http('http://www.mtlinfographie.com').headers do
@@ -37,11 +37,25 @@ control 'mtlinfo-02' do
 end
 control 'mtlinfo-03' do
   impact 1.0
-  title 'Website parameters validation 02'
+  title 'Website http method validation'
   desc 'Insert some description here'
   ref 'Some reference', url: 'http://link.to.some.documentation.com'
   describe http('http://www.mtlinfographie.com') do
     its('http_method') { should cmp 'GET' }
+  end
+end
+control 'mtlinfo-04' do
+  impact 1.0
+  title 'Website test validation'
+  desc 'Insert some description here'
+  ref 'Some reference', url: 'http://link.to.some.documentation.com'
+  describe http('http://www.mtlinfographie.com',
+                auth: {user: 'user', pass: 'test'},
+                params: {format: 'html'},
+                method: 'PUT',
+                headers: {'Content-Type' => 'application/json'},
+                data: '{"data":{"a":"1","b":"five"}}') do
+    its('status') { should cmp 200 }
   end
 end
 # read_timeout: 10,
