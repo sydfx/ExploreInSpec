@@ -1,0 +1,8 @@
+name: api-call
+title: InSpec Profile
+maintainer: sydfx
+copyright: sydfx
+copyright_email: admin@mtlinfographie.com
+license: Apache-2.0
+summary: An InSpec Compliance Profile
+version: 0.1.0
