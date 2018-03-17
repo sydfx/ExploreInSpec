@@ -1,0 +1,7 @@
+# Insest some configuration here
+target.url : http://www.mtlinfographie.com
+http.returned.code : 200
+body.content : GravCMS
+content.lengh : 36039
+content.type : text/html; charset=UTF-8
+headers.content : text/html; charset=UTF-8
