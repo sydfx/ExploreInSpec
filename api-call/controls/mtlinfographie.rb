@@ -64,8 +64,6 @@ impact 1.0
 title 'JSON configuration validation'
 desc 'Insert some description here'
 ref 'Some reference', url: 'http://link.to.some.documentation.com'
-
-end
 resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
 describe 'Country Code' do
   it 'should eq CA' do
@@ -95,4 +93,5 @@ describe 'Language returned from the target' do
   it 'should eq en-US,en;q=0.9' do
     expect(json(content: resp.body)['lang']).to(eq 'en-US,en;q=0.9')
   end
+ end
 end
