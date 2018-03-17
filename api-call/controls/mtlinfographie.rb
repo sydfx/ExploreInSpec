@@ -46,20 +46,6 @@ control 'mtlinfo-03' do
   end
 end
 control 'mtlinfo-04' do
-  impact 1.0
-  title 'Website test validation'
-  desc 'Insert some description here'
-  ref 'Some reference', url: 'http://link.to.some.documentation.com'
-  describe http('http://www.mtlinfographie.com',
-                auth: {user: 'user', pass: 'test'},
-                params: {format: 'html'},
-                method: 'PUT',
-                headers: {'Content-Type' => 'application/json'},
-                data: '{"data":{"a":"1","b":"five"}}') do
-    its('status') { should cmp 200 }
-  end
-end
-control 'mtlinfo-05' do
 impact 1.0
 title 'JSON configuration validation'
 desc 'Insert some description here'
