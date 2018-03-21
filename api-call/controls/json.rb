@@ -10,6 +10,10 @@ encoding = attribute('encoding', description: 'The expected encoding')
 ip_forwarded = attribute('ip.forwarded', description: 'The expected forwarded IP')
 hostname = attribute('target.host', description: 'The expected hostname')
 encoded_language = attribute('encoded.language', description: 'The expected encoded language')
+
+# Experiment
+# apr_features = attribute('apr_features', default: yaml(content: inspec.profile.file('apr_features.yml')).params, description: 'APR features')
+
 # Controls here.
 control 'json-01' do
 impact 1.0
@@ -20,19 +24,15 @@ resp = http(url, method: 'GET').body
 describe json(content: resp) do
   its('country_code') { should eq (country) }
 end
-resp = http(url, method: 'GET').body
 describe json(content: resp) do
   its('encoding') { should eq (encoding) }
 end
-resp = http(url, method: 'GET').body
 describe json(content: resp) do
   its('forwarded') { should eq (ip_forwarded) }
 end
-resp = http(url, method: 'GET').body
 describe json(content: resp) do
   its('host') { should eq (hostname) }
 end
-resp = http(url, method: 'GET').body
 describe json(content: resp) do
   its('lang') { should eq (encoded_language) }
  end
