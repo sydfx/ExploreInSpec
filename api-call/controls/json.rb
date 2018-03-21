@@ -4,42 +4,36 @@
 title 'REST API call learning'
 
 # Attributes here.
-
-
+url = attribute('target.url', description: 'The targeted URL')
+country = attribute('country.code', description: 'The expected country')
+encoding = attribute('encoding', description: 'The expected encoding')
+ip_forwarded = attribute('ip.forwarded', description: 'The expected forwarded IP')
+hostname = attribute('target.host', description: 'The expected hostname')
+encoded_language = attribute('encoded.language', description: 'The expected encoded language')
 # Controls here.
 control 'json-01' do
 impact 1.0
 title 'JSON configuration validation'
 desc 'Insert some description here'
 ref 'Some reference', url: 'http://link.to.some.documentation.com'
-resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
-describe 'Country Code' do
-  it 'should eq CA' do
-    expect(json(content: resp.body)['country_code']).to(eq 'CA')
-  end
- end
-resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
-describe 'Encoding' do
-  it 'should eq gzip' do
-    expect(json(content: resp.body)['encoding']).to(eq 'gzip')
-  end
+resp = http(url, method: 'GET').body
+describe json(content: resp) do
+  its('country_code') { should eq (country) }
 end
-resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
-describe 'IP forwarded' do
-  it 'should eq 127.0.0.1' do
-    expect(json(content: resp.body)['forwarded']).to(eq '127.0.0.1')
-  end
+resp = http(url, method: 'GET').body
+describe json(content: resp) do
+  its('encoding') { should eq (encoding) }
 end
-resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
-describe 'Host from the target' do
-  it 'should eq some.random.host.com.' do
-    expect(json(content: resp.body)['host']).to(eq 'some.random.host.com.')
-  end
+resp = http(url, method: 'GET').body
+describe json(content: resp) do
+  its('forwarded') { should eq (ip_forwarded) }
 end
-resp = http('https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json', method: 'GET')
-describe 'Language returned from the target' do
-  it 'should eq en-US,en;q=0.9' do
-    expect(json(content: resp.body)['lang']).to(eq 'en-US,en;q=0.9')
-  end
+resp = http(url, method: 'GET').body
+describe json(content: resp) do
+  its('host') { should eq (hostname) }
+end
+resp = http(url, method: 'GET').body
+describe json(content: resp) do
+  its('lang') { should eq (encoded_language) }
  end
 end

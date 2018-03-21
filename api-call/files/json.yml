@@ -1,0 +1,7 @@
+# Insest some configuration here
+target.url : https://s3.ca-central-1.amazonaws.com/inspecsyd/test.json
+country.code : CA
+encoding : gzip
+ip.forwarded : 127.0.0.1
+target.host : some.random.host.com.
+encoded.language : en-US,en;q=0.9

@@ -1,0 +1,8 @@
+dev:
+  packages:
+    - pkg1
+    - pkg2
+prod:
+  packages:
+    - pkg3
+    - pkg4
