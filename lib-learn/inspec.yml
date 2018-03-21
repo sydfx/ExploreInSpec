@@ -6,3 +6,5 @@ copyright_email: admin@mtlinfographie.com
 license: Apache-2.0
 summary: An InSpec Compliance Profile that shows an example using a library
 version: 0.1.0
+supports:
+  - os-family: unix
