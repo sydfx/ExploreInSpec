@@ -11,7 +11,7 @@ title 'Workshop InSpec Compliance'
 # SSH1 was the original protocol and was subject to security issues.
 # SSH2 is more advanced and secure.
 # How would I test this?
-control 'Basic control - SSH Agent' do
+control 'ssh-01' do
   impact 1.0
   title 'Ensure that the SSH Agent is running.'
   desc 'The description is not needed here, read the title'
@@ -20,7 +20,7 @@ control 'Basic control - SSH Agent' do
   end
 end
 
-control 'Basic control - SSH Version' do
+control 'ssh-02' do
   impact 1.0
   title 'SSH Version 2'
   desc <<-EOF
