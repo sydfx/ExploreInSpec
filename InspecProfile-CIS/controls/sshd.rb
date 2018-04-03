@@ -2,15 +2,8 @@
 # copyright: 2018, sydfx
 
 # you add controls here
-title 'Workshop InSpec Compliance'
-# Reference to write this test --> http://www.anniehedgie.com/inspec-basics-2
+title 'sshd InSpec Compliance'
 
-# you add controls here
-
-# SSH supports two different and incompatible protocols: SSH1 and SSH2.
-# SSH1 was the original protocol and was subject to security issues.
-# SSH2 is more advanced and secure.
-# How would I test this?
 
 control 'ssh-01' do
   impact 1.0
