@@ -11,24 +11,20 @@ title 'Workshop InSpec Compliance'
 # SSH1 was the original protocol and was subject to security issues.
 # SSH2 is more advanced and secure.
 # How would I test this?
+
 control 'ssh-01' do
   impact 1.0
-  title 'Ensure that the SSH Agent is running.'
-  desc 'The description is not needed here, read the title'
-  describe service 'ssh-agent' do
-    it { should be_running }
-  end
-end
-
-control 'ssh-02' do
-  impact 1.0
-  title 'SSH Version 2'
-  desc <<-EOF
-    SSH supports two different protocol versions. The original version, SSHv1,
-was subject to a number of security issues. Please use SSHv2 instead to avoid
-these.
-EOF
+  title 'sshd security compliance configuration'
+  desc 'sshd configuration should comply with this test to have the best security practices'
+  ref 'sshd documentation', url: 'http://www.delafond.org/traducmanfr/man/man5/sshd_config.5.html'
   describe sshd_config do
   its('Protocol') { should cmp 2 }
+  its('PubkeyAuthentication') { should eq 'yes' }
+  its('PasswordAuthentication') { should eq 'no' }
+  its('PermitEmptyPasswords') { should eq 'no' }
+  its('PermitRootLogin') { should eq 'no' }
+  its('X11Forwarding') { should eq 'no' }
+  its('StrictModes') { should eq 'yes' }
+  its('LogLevel') { should eq 'INFO' }
  end
 end
