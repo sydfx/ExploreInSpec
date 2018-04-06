@@ -4,13 +4,41 @@
 local-patch
 patched-src
 
-### DotSettings ###
+# DotSettings #
+###############
 *.DotSettings
-### Linux ###
+
+# Temporary files #
+###################
+*.swp
+*.swo
 *~
 
-# temporary files which can be created if a process still has a handle open of a deleted file
-.fuse_hidden*
+# Packages #
+############
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Logs and databases #
+######################
+*.log
+*.sql
+*.sqlite
 
 # KDE directory preferences
 .directory
@@ -18,16 +46,11 @@ patched-src
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
-# .nfs files are created when an open file is removed but is still being accessed
-.nfs*
-
-### macOS ###
+# macOS #
+#########
 *.DS_Store
 .AppleDouble
 .LSOverride
-
-# Icon must end with two \r
-Icon
 
 # Thumbnails
 ._*
@@ -48,7 +71,8 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
-### Windows ###
+# Windows #
+###########
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
@@ -69,7 +93,8 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-#  Local .terraform directories
+# Local .terraform directories #
+################################
 **/.terraform/*
 
 # .tfstate files
@@ -79,8 +104,8 @@ $RECYCLE.BIN/
 # .tfvars files
 *.tfvars
 
-# Wordpress ignored
-
+# Wordpress ignored #
+#####################
 *.log
 wp-config.php
 wp-content/advanced-cache.php
@@ -99,3 +124,12 @@ wp-content/plugins/hello.php
 /readme.html
 /sitemap.xml
 /sitemap.xml.gz
+
+# Various #
+###########
+*.lock
+package-lock.json
+.gitconfig
+.inspec
+.git
+.aws
