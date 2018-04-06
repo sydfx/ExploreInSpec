@@ -4,7 +4,6 @@
 # you add controls here
 title 'sshd InSpec Compliance'
 
-
 control 'ssh-01' do
   impact 1.0
   title 'sshd security compliance configuration'
